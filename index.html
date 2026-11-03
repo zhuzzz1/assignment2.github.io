@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="我的个人知识库 — 网络与新媒体（智能传播）专业学习档案，新媒体交互设计学习存档。">
+<title>我的个人知识库 | 新媒体交互设计学习存档</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+
+<!-- ============ 导航 ============ -->
+<header class="navbar" data-hero>
+  <div class="container">
+    <a class="logo" href="index.html">
+      <span class="logo-mark">知</span>
+      <span>
+        <span class="logo-text">个人<span>知识库</span></span>
+        <span class="logo-sub">KNOWLEDGE BASE</span>
+      </span>
+    </a>
+
+    <nav aria-label="主导航">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active" aria-current="page">首页</a></li>
+        <li><a href="category.html">知识分类</a></li>
+        <li><a href="list.html">笔记列表</a></li>
+        <li><a href="books.html">教材检索</a></li>
+        <li><a href="about.html">关于我</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-right">
+      <div class="nav-search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input type="search" placeholder="搜索笔记…" aria-label="搜索笔记">
+      </div>
+      <button class="hamburger" aria-label="打开菜单" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ============ Banner ============ -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-left">
+        <span class="hero-badge"><i></i>持续更新中 · 已收录 <span data-count="all">0</span> 篇笔记</span>
+        <h1>我的<span class="grad">个人知识库</span></h1>
+        <p class="hero-sub">新媒体交互设计学习存档</p>
+        <p class="hero-desc">
+          把网络与新媒体（智能传播）专业的课堂知识、交互设计方法、前端实践与竞赛实训，
+          整理成一份可检索、可复用的个人学习档案。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="list.html">开始浏览笔记
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="books.html">检索专业教材</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong data-count="all">0</strong><span>篇原创笔记</span></div>
+          <div><strong>4</strong><span>大知识分类</span></div>
+          <div><strong>6</strong><span>本课程教材</span></div>
+          <div><strong>62</strong><span>个教材知识点</span></div>
+        </div>
+      </div>
+
+      <!-- 个人信息简介 -->
+      <aside class="profile-card">
+        <div class="profile-top">
+          <div class="avatar">悦</div>
+          <div>
+            <h3>朱悦欣</h3>
+            <p>网络与新媒体（智能传播方向）</p>
+          </div>
+        </div>
+        <ul class="profile-list">
+          <li><span>专业</span><b>网络与新媒体</b></li>
+          <li><span>年级</span><b>2025 级 · 本科</b></li>
+          <li><span>学习方向</span><b>智能传播 / 交互设计</b></li>
+          <li><span>在建项目</span><b>个人知识库网站</b></li>
+        </ul>
+        <div class="profile-tags">
+          <span class="tag tag-theory">传播学</span>
+          <span class="tag tag-ui">UI/UX</span>
+          <span class="tag tag-code">前端开发</span>
+          <span class="tag tag-match">新媒体运营</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ 分类快捷入口 ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Categories</span>
+        <h2>四大知识分类</h2>
+        <p>按学习模块归档，从理论到实践，构建完整的专业知识地图。</p>
+        <div class="line"></div>
+      </div>
+      <div class="cats-grid" data-cats></div>
+    </div>
+  </section>
+
+  <!-- ============ 最新更新 + 公告 ============ -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="home-split">
+        <div>
+          <div class="section-head">
+            <span class="eyebrow">Latest Notes</span>
+            <h2>最新更新笔记</h2>
+            <p>最近整理的学习记录，按时间倒序排列。</p>
+            <div class="line"></div>
+          </div>
+          <div data-latest></div>
+          <a class="btn btn-ghost" href="list.html" style="margin-top:8px">查看全部笔记 →</a>
+        </div>
+
+        <div>
+          <div class="section-head">
+            <span class="eyebrow">Notice</span>
+            <h2>更新公告</h2>
+            <p>持续更新、学习记录与站点说明。</p>
+            <div class="line"></div>
+          </div>
+          <div class="notice-box">
+            <div class="notice-head"><i></i>站点动态</div>
+            <ul data-notice></ul>
+          </div>
+
+          <div class="notice-box" style="margin-top:16px;background:linear-gradient(135deg,#f3f9ff,#f5fbf0);border-color:rgba(64,158,255,.22)">
+            <div class="notice-head" style="margin-bottom:8px">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#409EFF" stroke-width="2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+              新增：教材检索
+            </div>
+            <p style="font-size:13px;color:#666;line-height:1.8">
+              收录《传播学教程》《新媒体概论》《设计心理学》等 6 本主干教材的知识点，
+              支持关键词全文定位与章节跳转。
+            </p>
+            <a class="btn btn-primary" href="books.html" style="margin-top:14px;height:38px;padding:0 20px;font-size:13px">立即检索</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ 页脚 ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-mark">知</span>
+          <div>
+            <div class="logo-text">个人<span>知识库</span></div>
+            <div class="logo-sub">KNOWLEDGE BASE</div>
+          </div>
+        </div>
+        <p style="line-height:1.9">网络与新媒体（智能传播）专业学习档案<br>新媒体交互设计课程作业 · 2026</p>
+      </div>
+      <div>
+        <h4>知识分类</h4>
+        <ul>
+          <li><a href="list.html?cat=theory">新媒体理论</a></li>
+          <li><a href="list.html?cat=ui">交互设计知识</a></li>
+          <li><a href="list.html?cat=code">前端&技术知识</a></li>
+          <li><a href="list.html?cat=match">竞赛&实训</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>站点导航</h4>
+        <ul>
+          <li><a href="index.html">首页</a></li>
+          <li><a href="category.html">知识分类</a></li>
+          <li><a href="list.html">笔记列表</a></li>
+          <li><a href="books.html">教材检索</a></li>
+          <li><a href="about.html">关于我</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>更新说明</h4>
+        <div class="footer-note">
+          <strong>● 持续更新</strong><br>
+          最近更新：2026.10.31<br>
+          更新频率：每周 2–3 篇<br>
+          内容范围：课程笔记 / 实训总结 / 竞赛备赛
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 朱悦欣 · 个人知识库 | 新媒体交互设计课程作业</span>
+      <span>本站内容仅用于学习交流 · 部分教材要点为课程整理摘录 · <a href="about.html">关于本页</a></span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" aria-label="回到顶部">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
