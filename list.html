@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="笔记列表 — 全部知识库笔记，支持关键词搜索、分类筛选与排序。">
+<title>笔记列表 | 我的个人知识库</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container">
+    <a class="logo" href="index.html">
+      <span class="logo-mark">知</span>
+      <span>
+        <span class="logo-text">个人<span>知识库</span></span>
+        <span class="logo-sub">KNOWLEDGE BASE</span>
+      </span>
+    </a>
+    <nav aria-label="主导航">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="category.html">知识分类</a></li>
+        <li><a href="list.html" class="active" aria-current="page">笔记列表</a></li>
+        <li><a href="books.html">教材检索</a></li>
+        <li><a href="about.html">关于我</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <div class="nav-search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input type="search" placeholder="搜索笔记…" aria-label="搜索笔记">
+      </div>
+      <button class="hamburger" aria-label="打开菜单" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb"><a href="index.html">首页</a><span>/</span><em>笔记列表</em></nav>
+      <span class="eyebrow">All Notes</span>
+      <h1>笔记列表</h1>
+      <p>全部知识库笔记统一展示，包含发布时间、分类标签与内容简介。输入关键词可全文检索（标题、标签、正文均可命中并高亮）。</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:32px">
+    <div class="container">
+
+      <!-- 工具栏 -->
+      <div class="list-toolbar">
+        <div class="filter-chips">
+          <button class="chip active" data-filter="all">全部</button>
+          <button class="chip" data-filter="theory">新媒体理论</button>
+          <button class="chip" data-filter="ui">交互设计</button>
+          <button class="chip" data-filter="code">前端&技术</button>
+          <button class="chip" data-filter="match">竞赛&实训</button>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+          <div class="search-box">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+            <input type="search" placeholder="搜索笔记标题 / 标签 / 正文" data-search-input aria-label="搜索笔记">
+            <button class="search-clear" data-search-clear aria-label="清空">×</button>
+          </div>
+          <select class="select-sort" data-sort aria-label="排序方式">
+            <option value="new">最新发布</option>
+            <option value="old">最早发布</option>
+            <option value="hot">阅读时长</option>
+          </select>
+        </div>
+      </div>
+
+      <p class="list-info">共找到 <b data-result-count>0</b> 篇笔记</p>
+
+      <div class="notes-grid" data-list></div>
+
+      <div class="empty-state" data-empty style="display:none">
+        <div class="em-icon">🔍</div>
+        <h3>没有找到相关笔记</h3>
+        <p>换个关键词试试，或切换到「全部」分类。也可以去教材检索里查找概念。</p>
+        <a class="btn btn-ghost" href="books.html" style="margin-top:16px">前往教材检索</a>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-mark">知</span>
+          <div>
+            <div class="logo-text">个人<span>知识库</span></div>
+            <div class="logo-sub">KNOWLEDGE BASE</div>
+          </div>
+        </div>
+        <p style="line-height:1.9">网络与新媒体（智能传播）专业学习档案<br>新媒体交互设计课程作业 · 2026</p>
+      </div>
+      <div>
+        <h4>知识分类</h4>
+        <ul>
+          <li><a href="list.html?cat=theory">新媒体理论</a></li>
+          <li><a href="list.html?cat=ui">交互设计知识</a></li>
+          <li><a href="list.html?cat=code">前端&技术知识</a></li>
+          <li><a href="list.html?cat=match">竞赛&实训</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>站点导航</h4>
+        <ul>
+          <li><a href="index.html">首页</a></li>
+          <li><a href="category.html">知识分类</a></li>
+          <li><a href="books.html">教材检索</a></li>
+          <li><a href="about.html">关于我</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>更新说明</h4>
+        <div class="footer-note">
+          <strong>● 持续更新</strong><br>
+          最近更新：2026.10.31<br>
+          更新频率：每周 2–3 篇<br>
+          内容范围：课程笔记 / 实训总结 / 竞赛备赛
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 朱悦欣 · 个人知识库 | 新媒体交互设计课程作业</span>
+      <span>本站内容仅用于学习交流 · <a href="about.html">关于本页</a></span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" aria-label="回到顶部">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

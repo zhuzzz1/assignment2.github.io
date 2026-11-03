@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>页面走丢了 404 | 我的个人知识库</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+
+<header class="navbar solid">
+  <div class="container">
+    <a class="logo" href="index.html">
+      <span class="logo-mark">知</span>
+      <span>
+        <span class="logo-text">个人<span>知识库</span></span>
+        <span class="logo-sub">KNOWLEDGE BASE</span>
+      </span>
+    </a>
+    <nav aria-label="主导航">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="category.html">知识分类</a></li>
+        <li><a href="list.html">笔记列表</a></li>
+        <li><a href="books.html">教材检索</a></li>
+        <li><a href="about.html">关于我</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <button class="hamburger" aria-label="打开菜单" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main class="err-wrap">
+  <div>
+    <div class="err-code">404</div>
+    <h1>这页笔记好像被翻丢了</h1>
+    <p>你访问的页面不存在，可能链接已失效、地址输错了，或者这条笔记还在整理中。</p>
+    <div class="err-actions">
+      <a class="btn btn-primary" href="index.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></svg>
+        返回首页
+      </a>
+      <a class="btn btn-ghost" href="list.html">浏览全部笔记</a>
+    </div>
+    <div class="err-links">
+      <span style="font-size:12px;color:#999;width:100%;margin-bottom:4px">或者从这里出发：</span>
+      <a href="category.html">知识分类</a>
+      <a href="books.html">教材检索</a>
+      <a href="list.html?cat=theory">新媒体理论</a>
+      <a href="list.html?cat=ui">交互设计</a>
+      <a href="list.html?cat=code">前端技术</a>
+      <a href="list.html?cat=match">竞赛实训</a>
+      <a href="about.html">关于我</a>
+    </div>
+  </div>
+</main>
+
+<footer class="footer" style="margin-top:0">
+  <div class="container">
+    <div class="footer-bottom" style="border-top:none">
+      <span>© 2026 朱悦欣 · 个人知识库 | 新媒体交互设计课程作业</span>
+      <span>错误页面 · 如果你是从站内链接过来的，欢迎告知我修正</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // 独立脚本：不依赖其它 JS 文件，保证错误页始终可用
+  (function () {
+    var burger = document.querySelector('.hamburger');
+    var links = document.querySelector('.nav-links');
+    if (burger && links) {
+      burger.addEventListener('click', function () {
+        var open = links.classList.toggle('open');
+        burger.classList.toggle('open', open);
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="关于我 — 个人知识库项目介绍、设计思路、技术栈与学习感悟。">
+<title>关于我 | 我的个人知识库</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container">
+    <a class="logo" href="index.html">
+      <span class="logo-mark">知</span>
+      <span>
+        <span class="logo-text">个人<span>知识库</span></span>
+        <span class="logo-sub">KNOWLEDGE BASE</span>
+      </span>
+    </a>
+    <nav aria-label="主导航">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="category.html">知识分类</a></li>
+        <li><a href="list.html">笔记列表</a></li>
+        <li><a href="books.html">教材检索</a></li>
+        <li><a href="about.html" class="active" aria-current="page">关于我</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <div class="nav-search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input type="search" placeholder="搜索笔记…" aria-label="搜索笔记">
+      </div>
+      <button class="hamburger" aria-label="打开菜单" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb"><a href="index.html">首页</a><span>/</span><em>关于我</em></nav>
+      <span class="eyebrow">About</span>
+      <h1>关于我 · 关于这个知识库</h1>
+      <p>一次课程作业，也是一次把自己所学「整理成系统」的尝试。</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:40px">
+    <div class="container">
+      <div class="about-grid">
+
+        <!-- 左：个人名片 -->
+        <aside class="about-card">
+          <div class="avatar">悦</div>
+          <h2>朱悦欣</h2>
+          <p class="about-role">网络与新媒体 · 智能传播方向</p>
+          <ul class="about-facts">
+            <li><span>院校</span><b>西北大学 新闻传播学院</b></li>
+            <li><span>年级</span><b>2025 级</b></li>
+            <li><span>核心课程</span><b>新媒体概论 / 交互设计</b></li>
+            <li><span>兴趣</span><b>UI 设计 · 前端 · 内容运营</b></li>
+            <li><span>邮箱</span><b>zhu@example.com</b></li>
+          </ul>
+          <div class="about-social">
+            <a href="list.html">看笔记</a>
+            <a href="books.html">查教材</a>
+          </div>
+          <p style="font-size:11px;color:#999;text-align:center;margin-top:14px;line-height:1.7">
+            本站为课程作业作品<br>非商业用途
+          </p>
+        </aside>
+
+        <!-- 右：正文 -->
+        <div>
+          <div class="about-block reveal">
+            <h3>项目介绍</h3>
+            <p>
+              「我的个人知识库」是一个面向网络与新媒体（智能传播）专业的个人学习档案网站。
+              它把一年来的课堂笔记、交互设计方法、前端实践记录与竞赛实训经验，按四大分类重新组织，
+              并提供笔记检索与专业教材知识点检索两条查找路径。
+            </p>
+            <p>
+              网站的定位是<b>「可用的复习工具」</b>而不只是展示页面：所有内容的数据结构统一，
+              搜索会同时匹配标题、标签、简介与正文，教材检索可以按书目、章节、关键词三层定位，
+              并且每条知识点都能跳转到相关笔记。
+            </p>
+          </div>
+
+          <div class="about-block reveal">
+            <h3>设计思路</h3>
+            <div class="steps">
+              <div class="step">
+                <span class="step-no">01</span>
+                <div>
+                  <h4>先定信息结构，再谈视觉</h4>
+                  <p>用「首页门户 → 分类 → 列表 → 详情」的层级组织内容，保证任意内容三步内可达。导航固定为五个入口，不增加用户的记忆负担。</p>
+                </div>
+              </div>
+              <div class="step">
+                <span class="step-no">02</span>
+                <div>
+                  <h4>低饱和度的单主色体系</h4>
+                  <p>主色浅蓝 #409EFF 承担交互与强调，浅绿 #67C23A 只用于「更新/成功」语义，浅橙 #E6A23C 用于标签。四类知识用同色系的深浅区分，避免页面出现过多颜色。</p>
+                </div>
+              </div>
+              <div class="step">
+                <span class="step-no">03</span>
+                <div>
+                  <h4>卡片 + 留白的模块化版式</h4>
+                  <p>所有内容区块统一为 8px 圆角的卡片，模块间距 24–32px，字号只用 12/14/18/24 四档，形成清晰的视觉层级。</p>
+                </div>
+              </div>
+              <div class="step">
+                <span class="step-no">04</span>
+                <div>
+                  <h4>克制的动效</h4>
+                  <p>统一的 0.3s 缓动过渡；hover 时卡片上浮 8px、阴影加深、轻微放大到 1.03 倍；按钮按下时缩小到 0.95 倍作为点击反馈。动效只说明「可交互」与「层级关系」，不做额外装饰。</p>
+                </div>
+              </div>
+              <div class="step">
+                <span class="step-no">05</span>
+                <div>
+                  <h4>移动端重新排布而非压缩</h4>
+                  <p>768px 以下全部转为单列，导航折叠为汉堡菜单，工具栏改为纵向堆叠，保证触控目标不小于 44px。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-block reveal">
+            <h3>技术栈</h3>
+            <div class="tech-list">
+              <div class="tech-item">
+                <span class="tech-badge" style="background:#E44D26">H5</span>
+                <div><h4>HTML5 语义化标签</h4><p>header / nav / main / section / footer 结构</p></div>
+              </div>
+              <div class="tech-item">
+                <span class="tech-badge" style="background:#264DE4">CSS</span>
+                <div><h4>CSS3 + 变量系统</h4><p>Grid / Flex、自定义属性、过渡与动画</p></div>
+              </div>
+              <div class="tech-item">
+                <span class="tech-badge" style="background:#E6A23C">JS</span>
+                <div><h4>原生 JavaScript</h4><p>数据渲染、搜索打分、IntersectionObserver</p></div>
+              </div>
+              <div class="tech-item">
+                <span class="tech-badge" style="background:#409EFF">RWD</span>
+                <div><h4>响应式设计</h4><p>媒体查询 + 流式布局，断点 768 / 1024</p></div>
+              </div>
+            </div>
+            <p style="font-size:12px;color:#999;margin-top:14px;line-height:1.9">
+              全站为纯静态页面，无框架、无外部依赖、无网络请求。内容以 JavaScript 数组形式集中管理（data.js / books.js），
+              新增笔记只需在数组中追加一条对象，列表页、搜索、分类页与首页会同步更新。
+            </p>
+          </div>
+
+          <div class="about-block reveal">
+            <h3>学习感悟</h3>
+            <p>
+              做这个网站之前，我的笔记散落在备忘录、课程群和本地文档里，找一条内容往往要翻很久。
+              整理成结构化的知识库之后我才发现，<b>真正的难点不是写笔记，而是分类</b>——
+              一条关于「算法推荐」的记录，到底属于传播理论还是技术实践？后来我接受了一件事：
+              归档的目的不是唯一正确，而是下次能找到。
+            </p>
+            <div class="thought" style="margin:14px 0">
+              「交互设计不只是让东西变好看，而是让人的意图和系统的反馈之间，少绕几步路。」
+            </div>
+            <p>
+              这门课里对我影响最大的是「可用性原则」和「示能」这两组概念。它们让我意识到，
+              那些我以为理所当然的按钮、提示、加载动画，其实都是设计者替用户提前想好的。
+              现在我做作业时会习惯性地问自己三个问题：用户到这里知道下一步做什么吗？操作有反馈吗？
+              出错了他能自己救回来吗？
+            </p>
+            <p>
+              这个知识库还会继续更新。下一步打算补充「智能传播」方向的内容：推荐系统的基本原理、
+              生成式 AI 对内容生产流程的影响，以及算法伦理相关的公开讨论案例。
+            </p>
+          </div>
+
+          <div class="about-block reveal">
+            <h3>致谢与声明</h3>
+            <p style="font-size:13px">
+              感谢授课老师在交互设计与网页制作课程中的指导。站内笔记为个人学习整理，
+              教材部分为课程要点摘录（非原文复制），仅供学习交流；
+              文中引用的理论与模型版权归原作者所有。如有内容疏漏，欢迎指正。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-mark">知</span>
+          <div>
+            <div class="logo-text">个人<span>知识库</span></div>
+            <div class="logo-sub">KNOWLEDGE BASE</div>
+          </div>
+        </div>
+        <p style="line-height:1.9">网络与新媒体（智能传播）专业学习档案<br>新媒体交互设计课程作业 · 2026</p>
+      </div>
+      <div>
+        <h4>知识分类</h4>
+        <ul>
+          <li><a href="list.html?cat=theory">新媒体理论</a></li>
+          <li><a href="list.html?cat=ui">交互设计知识</a></li>
+          <li><a href="list.html?cat=code">前端&技术知识</a></li>
+          <li><a href="list.html?cat=match">竞赛&实训</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>站点导航</h4>
+        <ul>
+          <li><a href="index.html">首页</a></li>
+          <li><a href="category.html">知识分类</a></li>
+          <li><a href="list.html">笔记列表</a></li>
+          <li><a href="books.html">教材检索</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>更新说明</h4>
+        <div class="footer-note">
+          <strong>● 持续更新</strong><br>
+          最近更新：2026.10.31<br>
+          更新频率：每周 2–3 篇<br>
+          内容范围：课程笔记 / 实训总结 / 竞赛备赛
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 朱悦欣 · 个人知识库 | 新媒体交互设计课程作业</span>
+      <span>本站内容仅用于学习交流 · 部分教材要点为课程整理摘录</span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" aria-label="回到顶部">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

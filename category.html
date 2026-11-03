@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="知识分类 — 新媒体理论、交互设计知识、前端&技术知识、竞赛&实训四大模块。">
+<title>知识分类 | 我的个人知识库</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container">
+    <a class="logo" href="index.html">
+      <span class="logo-mark">知</span>
+      <span>
+        <span class="logo-text">个人<span>知识库</span></span>
+        <span class="logo-sub">KNOWLEDGE BASE</span>
+      </span>
+    </a>
+    <nav aria-label="主导航">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="category.html" class="active" aria-current="page">知识分类</a></li>
+        <li><a href="list.html">笔记列表</a></li>
+        <li><a href="books.html">教材检索</a></li>
+        <li><a href="about.html">关于我</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <div class="nav-search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input type="search" placeholder="搜索笔记…" aria-label="搜索笔记">
+      </div>
+      <button class="hamburger" aria-label="打开菜单" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb"><a href="index.html">首页</a><span>/</span><em>知识分类</em></nav>
+      <span class="eyebrow">Categories</span>
+      <h1>知识分类</h1>
+      <p>按专业课程与能力模块划分为四大类，每类下设若干笔记与教材对照章节。点击分类标题可进入该分类的完整笔记列表。</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:40px">
+    <div class="container">
+      <!-- 总览 -->
+      <div class="cats-grid" style="margin-bottom:36px" data-cats></div>
+
+      <!-- 分类详情 -->
+      <div data-catlist></div>
+
+      <!-- 分类说明 -->
+      <div class="about-block reveal">
+        <h3>分类逻辑说明</h3>
+        <p>
+          分类遵循「理论 → 方法 → 工具 → 实践」的递进关系：<b>新媒体理论</b>提供理解传播现象的概念框架，
+          <b>交互设计知识</b>把理论转化为可操作的界面方法，<b>前端&技术知识</b>是落地手段，
+          <b>竞赛&实训</b>则是检验前三者的真实场景。四类之间存在交叉引用，笔记内的标签可以横向串联。
+        </p>
+        <p>
+          每篇笔记都标注了所属教材章节（可在「教材检索」中反查），方便期末复习时按章节回看。
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-mark">知</span>
+          <div>
+            <div class="logo-text">个人<span>知识库</span></div>
+            <div class="logo-sub">KNOWLEDGE BASE</div>
+          </div>
+        </div>
+        <p style="line-height:1.9">网络与新媒体（智能传播）专业学习档案<br>新媒体交互设计课程作业 · 2026</p>
+      </div>
+      <div>
+        <h4>知识分类</h4>
+        <ul>
+          <li><a href="#theory">新媒体理论</a></li>
+          <li><a href="#ui">交互设计知识</a></li>
+          <li><a href="#code">前端&技术知识</a></li>
+          <li><a href="#match">竞赛&实训</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>站点导航</h4>
+        <ul>
+          <li><a href="index.html">首页</a></li>
+          <li><a href="list.html">笔记列表</a></li>
+          <li><a href="books.html">教材检索</a></li>
+          <li><a href="about.html">关于我</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>更新说明</h4>
+        <div class="footer-note">
+          <strong>● 持续更新</strong><br>
+          最近更新：2026.10.31<br>
+          更新频率：每周 2–3 篇<br>
+          内容范围：课程笔记 / 实训总结 / 竞赛备赛
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 朱悦欣 · 个人知识库 | 新媒体交互设计课程作业</span>
+      <span>本站内容仅用于学习交流 · <a href="about.html">关于本页</a></span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" aria-label="回到顶部">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
