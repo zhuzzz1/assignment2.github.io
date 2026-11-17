@@ -86,7 +86,7 @@ function initNavbar() {
   if (navInput) {
     navInput.addEventListener('keydown', e => {
       if (e.key === 'Enter' && navInput.value.trim()) {
-        location.href = 'list.html?q=' + encodeURIComponent(navInput.value.trim());
+        location.href = 'index.html?q=' + encodeURIComponent(navInput.value.trim()) + '#posts';
       }
     });
   }
@@ -121,9 +121,13 @@ function initLazy() {
   const imgs = document.querySelectorAll('img[data-src]');
   if (!imgs.length) return;
   const load = img => {
-    img.src = img.dataset.src;
+    const src = img.getAttribute('data-src');
+    /* 已被其它实例加载过（data-src 已移除）就直接跳过，避免 src 被写成 "undefined" */
+    if (!src) return;
     img.removeAttribute('data-src');
     img.addEventListener('load', () => img.classList.add('loaded'));
+    img.addEventListener('error', () => img.classList.add('loaded'));
+    img.src = src;
   };
   if (!('IntersectionObserver' in window)) { imgs.forEach(load); return; }
   const ob = new IntersectionObserver(es => {
@@ -131,7 +135,12 @@ function initLazy() {
       if (en.isIntersecting) { load(en.target); ob.unobserve(en.target); }
     });
   }, { rootMargin: '120px' });
-  imgs.forEach(i => ob.observe(i));
+  imgs.forEach(i => {
+    /* 标记已观察，防止重复绑定多个 observer */
+    if (i.dataset.lazyBound === '1') return;
+    i.dataset.lazyBound = '1';
+    ob.observe(i);
+  });
 }
 
 /* ---------- 搜索：建索引 + 打分 + 高亮 ---------- */
@@ -361,6 +370,8 @@ function renderList() {
 function renderDetail() {
   const page = document.querySelector('[data-detail]');
   if (!page) return;
+  /* 博客模式（detail.html?t=blog）交给 blog.js 的 renderBlogDetail 渲染 */
+  if (new URLSearchParams(location.search).get('t') === 'blog') return;
   const id = new URLSearchParams(location.search).get('id');
   const n = NOTES.find(x => x.id === id) || NOTES[0];
   const related = NOTES.filter(x => x.cat === n.cat && x.id !== n.id).slice(0, 3);
